@@ -24,7 +24,7 @@ fun InputStream.getString(): String = this.bufferedReader().use {
  * write file from InputStream
  *
  * @param[file] to write File object
- * @return File object which gaven as parameter
+ * @return File object which given as parameter
  */
 
 fun InputStream.outAsFile(file: File): File {
@@ -43,6 +43,8 @@ fun InputStream.outAsFile(file: File): File {
  * get Bitmap from InputStream
  * @return Bitmap object
  */
-fun InputStream.outAsBitmap(): Bitmap = use {
+
+@JvmOverloads
+fun InputStream.getBitmap(): Bitmap = use {
     BitmapFactory.decodeStream(it)
 }
