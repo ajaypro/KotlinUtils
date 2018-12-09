@@ -3,6 +3,9 @@ package ajay.opensource.samples
 import ajay.opensource.kotlinutils.asDateString
 import ajay.opensource.kotlinutils.dateFromCurrentTime
 import ajay.opensource.kotlinutils.toDateString
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.util.*
 
 
 /**
@@ -11,8 +14,10 @@ import ajay.opensource.kotlinutils.toDateString
 
 
     fun main(args: Array<String>) {
+        val date1:Date =
+        println(date1.asDateString("dd/mm/yy"))
 
-        //Getting date from current time
+        //Getting date as string as desired format
         println(dateFromCurrentTime("yy-m-d"))
 
        //Getting date from current time
