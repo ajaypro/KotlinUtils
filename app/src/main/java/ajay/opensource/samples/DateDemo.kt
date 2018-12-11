@@ -1,8 +1,9 @@
-package ajay.opensource.samples
+package com.ajay.kotlinutils
 
 import ajay.opensource.kotlinutils.asDateString
 import ajay.opensource.kotlinutils.dateFromCurrentTime
 import ajay.opensource.kotlinutils.toDateString
+import android.content.Context
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.util.*
@@ -13,15 +14,19 @@ import java.util.*
  */
 
 
+
     fun main(args: Array<String>) {
-        val date1:Date =
-        println(date1.asDateString("dd/mm/yy"))
+        val date1: Date? = null
+        println(date1?.asDateString("dd/mm/yy"))
 
         //Getting date as string as desired format
         println(dateFromCurrentTime("yy-m-d"))
 
-       //Getting date from current time
-       val date: Long = System.currentTimeMillis()
+        //Getting date from current time
+        val date: Long = System.currentTimeMillis()
         println(date.asDateString("yy-mm-dd"))
+
+        lateinit var context: Context
+        println("$context.networkCheck()")
 
     }

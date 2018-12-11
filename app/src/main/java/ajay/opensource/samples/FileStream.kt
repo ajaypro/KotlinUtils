@@ -11,6 +11,7 @@ import java.io.File
  */
 
 
+/*
 fun main(args: Array<String>){
 
     val data: InputStream = ByteArrayInputStream("Kotlin is great".toByteArray())
@@ -24,4 +25,4 @@ fun main(args: Array<String>){
 
 
 
-}
+}*/
