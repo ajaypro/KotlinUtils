@@ -11,8 +11,7 @@ import java.io.File
  */
 
 
-/*
-fun main(args: Array<String>){
+fun main(args: Array<String>) {
 
     val data: InputStream = ByteArrayInputStream("Kotlin is great".toByteArray())
     val response = data.getString()
@@ -23,6 +22,4 @@ fun main(args: Array<String>){
     val value: InputStream = BufferedInputStream("Kotlin is good".byteInputStream())
     value.outAsFile(File("out your file path"))
 
-
-
-}*/
+}

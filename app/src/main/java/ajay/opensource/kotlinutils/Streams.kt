@@ -16,35 +16,36 @@ import java.io.InputStream
  * @return response string
  */
 
-fun InputStream.getString(): String = this.bufferedReader().use {
-    it.readText()
-}
 
-/**
- * write file from InputStream
- *
- * @param[file] to write File object
- * @return File object which given as parameter
- */
-
-fun InputStream.outAsFile(file: File): File {
-    file.createNewFile()
-
-    use { input ->
-        file.outputStream().use { fileOut ->
-            input.copyTo(fileOut)
-        }
+    fun InputStream.getString(): String = this.bufferedReader().use {
+        it.readText()
     }
 
-    return file
-}
+    /**
+     * write file from InputStream
+     *
+     * @param[file] to write File object
+     * @return File object which given as parameter
+     */
 
-/**
- * get Bitmap from InputStream
- * @return Bitmap object
- */
+    fun InputStream.outAsFile(file: File): File {
+        file.createNewFile()
 
-@JvmOverloads
-fun InputStream.getBitmap(): Bitmap = use {
-    BitmapFactory.decodeStream(it)
-}
+        use { input ->
+            file.outputStream().use { fileOut ->
+                input.copyTo(fileOut)
+            }
+        }
+
+        return file
+    }
+
+    /**
+     * get Bitmap from InputStream
+     * @return Bitmap object
+     */
+
+    @JvmOverloads
+    fun InputStream.getBitmap(): Bitmap = use {
+        BitmapFactory.decodeStream(it)
+    }

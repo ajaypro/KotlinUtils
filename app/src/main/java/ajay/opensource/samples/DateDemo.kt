@@ -1,4 +1,4 @@
-package com.ajay.kotlinutils
+package ajay.opensource.samples
 
 import ajay.opensource.kotlinutils.asDateString
 import ajay.opensource.kotlinutils.dateFromCurrentTime
