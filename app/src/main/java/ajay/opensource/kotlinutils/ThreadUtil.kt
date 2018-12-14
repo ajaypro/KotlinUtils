@@ -1,5 +1,6 @@
 package ajay.opensource.kotlinutils
 
+import ajay.opensource.interfaces.K0
 import android.os.Handler
 import android.os.Looper
 
@@ -21,8 +22,8 @@ fun runCodeonUIThread(code: () -> Unit) = Handler(Looper.getMainLooper()).post(R
  *  @return [action] code to execute
  */
 
-fun runDelayed(delayinms: Long, action: () -> Unit) =
-    Handler(Looper.getMainLooper()).postDelayed(Runnable(action),delayinms)
+fun runDelayed(delayinms: Long, action: K0) =
+    Handler().postDelayed({action.invoke()},delayinms)
 
 /**
  * run code inside of UI Thread after given delay
@@ -30,7 +31,8 @@ fun runDelayed(delayinms: Long, action: () -> Unit) =
  * @param[delayMillis] delay in ms
  * @param[action] code to execute
  */
-fun runDelayedOnUiThread(action: () -> Unit, delayMillis: Long) = Handler(Looper.getMainLooper()).postDelayed(Runnable(action), delayMillis)
+fun runDelayedOnUiThread(action: () -> Unit, delayMillis: Long) =
+    Handler(Looper.getMainLooper()).postDelayed(Runnable(action), delayMillis)
 
 
 
