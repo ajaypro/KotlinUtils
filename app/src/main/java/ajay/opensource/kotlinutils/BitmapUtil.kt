@@ -90,3 +90,11 @@ fun Context.requestMediaScanning(url: String) {
     mediaScanIntent.data = contentUri
     this.sendBroadcast(mediaScanIntent)
 }
+
+public enum class ImageOrientation{
+    PORTRAIT, LANDSCAPE;
+     fun getOrientation(width: Int, height: Int) : ImageOrientation {
+          return if (width >= height) LANDSCAPE else PORTRAIT
+
+     }
+}

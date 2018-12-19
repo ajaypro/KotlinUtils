@@ -9,7 +9,6 @@ import java.nio.charset.Charset
 
 fun String.toFile() = File(this)
 
-
 /**
  * read file to string
  */
