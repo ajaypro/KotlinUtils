@@ -5,8 +5,10 @@ import android.app.ActivityManager
 import android.appwidget.AppWidgetManager
 import android.bluetooth.BluetoothManager
 import android.content.Context
+import android.hardware.SensorManager
 import android.hardware.camera2.CameraManager
 import android.hardware.display.DisplayManager
+import android.location.LocationManager
 import android.media.AudioManager
 import android.net.ConnectivityManager
 import android.os.BatteryManager
@@ -76,4 +78,19 @@ inline val Context.cameraManager
 inline val Context.displayManager
     @SuppressLint("InlinedApi")
     get() = getSystemService(Context.DISPLAY_SERVICE) as DisplayManager
+
+
+/**
+ * get LocationManager
+ */
+inline val Context.locationManager
+    @SuppressLint("InlinedApi")
+      get() = getSystemService(Context.LOCATION_SERVICE) as LocationManager
+
+
+/**
+ * get SensorManager
+ */
+inline val Context.sensorManager
+    get() = getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
