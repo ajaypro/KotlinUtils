@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="ajay.opensource.com.kotlinutillib">
+
+    <application>
+    <service android:name=".service.LocationServiceUtil"
+             android:enabled="true"/>
+    </application>
+
+</manifest>

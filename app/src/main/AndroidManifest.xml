@@ -14,7 +14,7 @@
             android:theme="@style/AppTheme"
            >
         <activity
-                android:name="ajay.opensource.MainActivity"
+                android:name="ajay.opensource.ajay.MainActivity"
         android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".kotlinutils.LocationServiceUtil"
+        <service android:name="ajay.opensource.com.kotlinutillib.service.LocationServiceUtil"
                  android:enabled="true"/>
     </application>
 
