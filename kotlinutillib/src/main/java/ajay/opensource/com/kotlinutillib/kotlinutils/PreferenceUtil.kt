@@ -101,6 +101,60 @@ class PreferenceUtil private constructor(context: Context) {
             is CharSequence -> put(key, value)
         }
     }
+
+
+    /**
+     * get String value from SharedPreference
+     *
+     * @param[key] key of preference
+     * @param[def] optional, if key is not presented or some unexpected problem happened, it will be return
+     * @return String object
+     */
+    @JvmOverloads
+    fun getString(key:String, value: String =""):String? =
+             getValue({pref.getString(key,value)},value)
+
+    /**
+     * get Char value from SharedPreference
+     *
+     * @param[key] key of preference
+     * @param[def] optional, if key is not presented or some unexpected problem happened, it will be return
+     * @return String object
+     */
+    @JvmOverloads
+    fun getChar(key:String, value: Char ='\u0000'):Char =
+        getValue({pref.getString(key,value.toString())[0]},value)
+
+    /**
+     * get Int value from SharedPreference
+     *
+     * @param[key] key of preference
+     * @param[def] optional, if key is not presented or some unexpected problem happened, it will be return
+     * @return Int object
+     */
+    @JvmOverloads fun getInt(key: String, def: Int = 0): Int = getValue({ pref.getInt(key, def) }, def)
+
+    /**
+     * get Long value from SharedPreference
+     *
+     * @param[key] key of preference
+     * @param[def] optional, if key is not presented or some unexpected problem happened, it will be return
+     * @return Long object
+     */
+    @JvmOverloads
+    fun getLong(key: String, def: Long = 0): Long = getValue({ pref.getLong(key, def) }, def)
+
+    /**
+     * get Float value from SharedPreference
+     *
+     * @param[key] key of preference
+     * @param[def] optional, if key is not presented or some unexpected problem happened, it will be return
+     * @return Float object
+     */
+    @JvmOverloads
+    fun getFloat(key: String, def: Float = 0f): Float = getValue({ pref.getFloat(key, def) }, def)
+
+
     /**
      * delete key from SharedPreference
      *
@@ -116,5 +170,7 @@ class PreferenceUtil private constructor(context: Context) {
      *
      */
     fun clear(key: String) = editor.clear().commit()
+
+
 
 }
