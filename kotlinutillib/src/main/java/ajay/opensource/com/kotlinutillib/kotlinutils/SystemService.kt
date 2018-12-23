@@ -2,6 +2,7 @@ package ajay.opensource.com.kotlinutillib.kotlinutils
 
 import android.annotation.SuppressLint
 import android.app.ActivityManager
+import android.app.NotificationManager
 import android.appwidget.AppWidgetManager
 import android.bluetooth.BluetoothManager
 import android.content.Context
@@ -18,6 +19,9 @@ import android.view.inputmethod.InputMethodManager
  * Created by Ajay Deepak on 09-12-2018.
  */
 
+
+inline val Context.notificationManager
+    get() = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
 /**
  * get InputMethodManager
