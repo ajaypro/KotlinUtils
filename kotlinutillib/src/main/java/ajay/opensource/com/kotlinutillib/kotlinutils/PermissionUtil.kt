@@ -55,6 +55,17 @@ class PermissionUtil private constructor() {
     /**
      * check and request Permission which given.
      *
+     * @param[array] array of Permission to check
+     * @param[callback] callback object
+     * @return check result
+     */
+    @JvmOverloads
+    fun checkPermission(context: Context, array: Array<String>, callback:(Int, List<String>) -> Unit = {_,_ ->}) : Boolean
+            = checkPermission(context, List(array.size){array[it]}, callback)
+
+    /**
+     * check and request Permission which given.
+     *
      * @param[list] list of Permission to check
      * @param[callback] callback object
      * @return check result
