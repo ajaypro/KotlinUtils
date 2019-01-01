@@ -1,6 +1,7 @@
 package ajay.opensource.com.kotlinutillib.kotlinutils
 
 import java.util.ArrayList
+import java.util.function.BiPredicate
 
 /**
  * Created by Ajay Deepak on 30-12-2018.
@@ -32,3 +33,36 @@ fun <T> arrayListOf(vararg items: T) = ArrayList(items.toList())
  * @param items the objects to be stored in the returned list
  */
 inline fun <reified T> arrayOf(vararg items: T) = items.toList().toTypedArray()
+
+/**
+ * Test if given all of vararg parameter are match given predicate
+ *
+ * Usages
+ * testWithParams({ it.length > 3 }, "Steve", "Bobs") -> true
+ * testWithParams({ it.length > 3 }, "Steve", "Bob") -> false
+ *
+ * @param <T> The class of the objects
+ * @param predicate : Higher-order function that given single <T> and return as Boolean
+ *
+ */
+
+fun <T>matchAllPredicate(predicate: (T) -> Boolean, vararg items: T): Boolean {
+    return items.map { predicate(it) }.all { true }
+}
+
+/**
+ * Test if given any of vararg parameter are match given predicate
+ *
+ * Usages
+ * testWithParams({ it.length > 3 }, "Steve", "Bobs") -> true
+ * testWithParams({ it.length > 3 }, "Steve", "Bob") -> true
+ * testWithParams({ it.length > 3  }, "Eve", "Bob") -> false
+ *
+ * @param <T> The class of the objects
+ * @param predicate : Higher-order function that given single <T> and return as Boolean
+ *
+ */
+
+fun <T>matchAnyPredicate(predicate: (T) -> Boolean, vararg items: T): Boolean {
+    return items.map { predicate(it) }.any { true }
+}
