@@ -13,6 +13,7 @@ import android.location.LocationManager
 import android.media.AudioManager
 import android.net.ConnectivityManager
 import android.os.BatteryManager
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 
 /**
@@ -97,4 +98,8 @@ inline val Context.locationManager
  */
 inline val Context.sensorManager
     get() = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+
+
+inline val Context.windowManager
+    get() = getSystemService(Context.WINDOW_SERVICE) as WindowManager
 
